@@ -36,6 +36,7 @@ namespace CursoWindowsForms
             this.testeToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.testeToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.testeToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@ namespace CursoWindowsForms
             // testeToolStripMenuItem1
             // 
             this.testeToolStripMenuItem1.Name = "testeToolStripMenuItem1";
-            this.testeToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.testeToolStripMenuItem1.Size = new System.Drawing.Size(99, 22);
             this.testeToolStripMenuItem1.Text = "teste";
             // 
             // testeToolStripMenuItem2
@@ -73,7 +74,7 @@ namespace CursoWindowsForms
             // testeToolStripMenuItem3
             // 
             this.testeToolStripMenuItem3.Name = "testeToolStripMenuItem3";
-            this.testeToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.testeToolStripMenuItem3.Size = new System.Drawing.Size(99, 22);
             this.testeToolStripMenuItem3.Text = "teste";
             // 
             // testeToolStripMenuItem4
@@ -82,12 +83,22 @@ namespace CursoWindowsForms
             this.testeToolStripMenuItem4.Size = new System.Drawing.Size(99, 22);
             this.testeToolStripMenuItem4.Text = "teste";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(377, 82);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Frm_Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.button1);
             this.Name = "Frm_Test";
             this.Text = "Form_Test";
             this.contextMenuStrip1.ResumeLayout(false);
@@ -103,5 +114,6 @@ namespace CursoWindowsForms
         private System.Windows.Forms.ToolStripMenuItem testeToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem testeToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem testeToolStripMenuItem4;
+        private System.Windows.Forms.Button button1;
     }
 }
