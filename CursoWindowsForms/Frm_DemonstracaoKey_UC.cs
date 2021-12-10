@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CursoWindowsForms
 {
-    public partial class Frm_DemonstracaoKey : Form
+    public partial class Frm_DemonstracaoKey_UC : UserControl
     {
-        public Frm_DemonstracaoKey()
+        public Frm_DemonstracaoKey_UC()
         {
             InitializeComponent();
         }
@@ -32,6 +32,6 @@ namespace CursoWindowsForms
             this.Txt_Input.Text = "";
             this.Lbl_Lower.Text = "";
             this.Lbl_Upper.Text = "";
-        }      
+        }
     }
 }
