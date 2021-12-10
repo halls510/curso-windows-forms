@@ -13,11 +13,12 @@ namespace CursoWindowsForms
     public partial class Frm_Principal_Menu_UC : Form
     {
         int ControleDemonstracaoKey = 0;
-        int ControleHelloWorld = 0;        
-        int ControleMascara = 0;        
-        int ControleValidaCPF = 0;        
-        int ControleValidaCPF2 = 0;        
-        int ControleValidaSenha = 0;        
+        int ControleHelloWorld = 0;
+        int ControleMascara = 0;
+        int ControleValidaCPF = 0;
+        int ControleValidaCPF2 = 0;
+        int ControleValidaSenha = 0;
+        int ControleArquivoImagem = 0;
         public Frm_Principal_Menu_UC()
         {
             InitializeComponent();
@@ -108,10 +109,33 @@ namespace CursoWindowsForms
 
         private void apagarAbaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(!(Tbc_Aplicacoes.SelectedTab == null))
+            if (!(Tbc_Aplicacoes.SelectedTab == null))
             {
                 Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.SelectedTab);
-            }           
+            }
+        }
+
+        private void abrirImagemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog Db = new OpenFileDialog();
+            Db.InitialDirectory = @"D:\Documents\source\repos\curso-windows-forms\CursoWindowsForms\Imagens";
+            Db.Filter = "PNG|*.PNG";
+            Db.Title = "Escolha a Imagem";
+
+            if (Db.ShowDialog() == DialogResult.OK)
+            {
+                string nomeArquivoImagem = Db.FileName;                
+
+                this.ControleArquivoImagem += 1;
+                Frm_ArquivoImagem_UC U = new Frm_ArquivoImagem_UC(nomeArquivoImagem);
+                U.Dock = DockStyle.Fill;
+                TabPage TB = new TabPage();
+                TB.Name = "Arquivo Imagem " + this.ControleArquivoImagem;
+                TB.Text = "Arquivo Imagem " + this.ControleArquivoImagem;
+                TB.ImageIndex = 6;
+                TB.Controls.Add(U);
+                Tbc_Aplicacoes.TabPages.Add(TB);
+            }
         }
     }
 }
