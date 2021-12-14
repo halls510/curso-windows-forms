@@ -101,6 +101,24 @@
     <Compile Include="FormulariosCurso2\Frm_Mascara_UC.Designer.cs">
       <DependentUpon>Frm_Mascara_UC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_MouseCaptura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MouseCaptura.Designer.cs">
+      <DependentUpon>Frm_MouseCaptura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MouseCursor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MouseCursor.Designer.cs">
+      <DependentUpon>Frm_MouseCursor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MouseEventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MouseEventos.Designer.cs">
+      <DependentUpon>Frm_MouseEventos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +210,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosCurso2\Frm_Mascara_UC.resx">
       <DependentUpon>Frm_Mascara_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MouseCaptura.resx">
+      <DependentUpon>Frm_MouseCaptura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MouseCursor.resx">
+      <DependentUpon>Frm_MouseCursor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MouseEventos.resx">
+      <DependentUpon>Frm_MouseEventos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Principal.resx">
       <DependentUpon>Frm_Principal.cs</DependentUpon>
