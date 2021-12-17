@@ -79,14 +79,14 @@ namespace CursoWindowsForms
             // conectarToolStripMenuItem
             // 
             this.conectarToolStripMenuItem.Name = "conectarToolStripMenuItem";
-            this.conectarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.conectarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.conectarToolStripMenuItem.Text = "Conectar";
             this.conectarToolStripMenuItem.Click += new System.EventHandler(this.conectarToolStripMenuItem_Click);
             // 
             // desconectarToolStripMenuItem
             // 
             this.desconectarToolStripMenuItem.Name = "desconectarToolStripMenuItem";
-            this.desconectarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.desconectarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.desconectarToolStripMenuItem.Text = "Desconectar";
             this.desconectarToolStripMenuItem.Click += new System.EventHandler(this.desconectarToolStripMenuItem_Click);
             // 
@@ -100,7 +100,7 @@ namespace CursoWindowsForms
             this.validaCPF2ToolStripMenuItem,
             this.validaSenhaToolStripMenuItem});
             this.novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            this.novoToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.novoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.novoToolStripMenuItem.Text = "Novo";
             // 
             // demonstraçãoKeyToolStripMenuItem
@@ -160,14 +160,14 @@ namespace CursoWindowsForms
             // apagarAbaToolStripMenuItem
             // 
             this.apagarAbaToolStripMenuItem.Name = "apagarAbaToolStripMenuItem";
-            this.apagarAbaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.apagarAbaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.apagarAbaToolStripMenuItem.Text = "Apagar Aba";
             this.apagarAbaToolStripMenuItem.Click += new System.EventHandler(this.apagarAbaToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -201,6 +201,7 @@ namespace CursoWindowsForms
             this.Tbc_Aplicacoes.SelectedIndex = 0;
             this.Tbc_Aplicacoes.Size = new System.Drawing.Size(800, 426);
             this.Tbc_Aplicacoes.TabIndex = 1;
+            this.Tbc_Aplicacoes.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tbc_Aplicacoes_MouseDown);
             // 
             // Iml_Imagens
             // 

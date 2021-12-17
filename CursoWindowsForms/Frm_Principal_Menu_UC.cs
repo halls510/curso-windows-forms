@@ -191,5 +191,10 @@ namespace CursoWindowsForms
                 abrirImagemToolStripMenuItem.Enabled = false;
             }
         }
+
+        private void Tbc_Aplicacoes_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }
