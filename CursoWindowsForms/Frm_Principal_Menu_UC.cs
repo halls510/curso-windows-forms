@@ -20,6 +20,7 @@ namespace CursoWindowsForms
         int ControleValidaCPF2 = 0;
         int ControleValidaSenha = 0;
         int ControleArquivoImagem = 0;
+        int ControleCadastroClientes = 0;
         public Frm_Principal_Menu_UC()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace CursoWindowsForms
             apagarAbaToolStripMenuItem.Enabled = false;
             abrirImagemToolStripMenuItem.Enabled = false;
             desconectarToolStripMenuItem.Enabled = false;
+            cadastrosToolStripMenuItem.Enabled = false;
         }
 
         private void demonstraçãoKeyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -162,6 +164,7 @@ namespace CursoWindowsForms
                     novoToolStripMenuItem.Enabled = true;
                     apagarAbaToolStripMenuItem.Enabled = true;
                     abrirImagemToolStripMenuItem.Enabled = true;
+                    cadastrosToolStripMenuItem.Enabled = true;
 
                     MessageBox.Show("Bem vindo " + login + " !", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -189,6 +192,7 @@ namespace CursoWindowsForms
                 novoToolStripMenuItem.Enabled = false;
                 apagarAbaToolStripMenuItem.Enabled = false;
                 abrirImagemToolStripMenuItem.Enabled = false;
+                cadastrosToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -261,6 +265,26 @@ namespace CursoWindowsForms
             for (int i = ItemSelecionado - 1; i >= 0; i--)
             {
                 Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.TabPages[i]);
+            }
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ControleCadastroClientes == 0)
+            {
+                this.ControleCadastroClientes += 1;
+                Frm_CadastroCliente_UC U = new Frm_CadastroCliente_UC();
+                U.Dock = DockStyle.Fill;
+                TabPage TB = new TabPage();
+                TB.Name = "Cadastro de Clientes " + this.ControleCadastroClientes;
+                TB.Text = "Cadastro de Clientes " + this.ControleCadastroClientes;
+                TB.ImageIndex = 7;
+                TB.Controls.Add(U);
+                Tbc_Aplicacoes.TabPages.Add(TB);
+            }
+            else
+            {
+                MessageBox.Show("Não posso abrir o Cadastro de Clientes porque já está aberto","Banco ByteBank",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
     }
