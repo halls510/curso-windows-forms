@@ -1,0 +1,11 @@
+. Código - Tem que ter 6 dígitos e somente números (Obrigatório);
+. Nome da mãe (Obrigatório);
+. CEP - Deve ter 8 dígitos numéricos (Obrigatório);
+. Dados do endereço do cliente (Obrigatório);
+. Telefone - Somente números (Obrigatório);
+. Renda Familiar: Somente números (Obrigatório);
+. REnda Familiar deve ser um número maior que zero.
+
+. Nome da mãe e nome do pai não podem ser iguais;
+. CPF - Tem que ter 11 dígitos e deve ser um número válido (Obrigatório);
+. Se o Pai estiver em branco devemos marcar o Pai Desconhecido;
