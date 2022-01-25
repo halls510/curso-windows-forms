@@ -89,7 +89,7 @@ namespace CursoWindowsForms
             this.Lbl_CPF.Name = "Lbl_CPF";
             this.Lbl_CPF.Size = new System.Drawing.Size(35, 13);
             this.Lbl_CPF.TabIndex = 0;
-            this.Lbl_CPF.Text = "label1";
+            this.Lbl_CPF.Text = "Lbl_CPF";
             // 
             // Txt_CPF
             // 
@@ -116,7 +116,7 @@ namespace CursoWindowsForms
             this.Lbl_NomeCliente.Name = "Lbl_NomeCliente";
             this.Lbl_NomeCliente.Size = new System.Drawing.Size(35, 13);
             this.Lbl_NomeCliente.TabIndex = 2;
-            this.Lbl_NomeCliente.Text = "label1";
+            this.Lbl_NomeCliente.Text = "Lbl_NomeCliente";
             // 
             // Txt_NomePai
             // 
@@ -134,7 +134,7 @@ namespace CursoWindowsForms
             this.Lbl_NomePai.Name = "Lbl_NomePai";
             this.Lbl_NomePai.Size = new System.Drawing.Size(35, 13);
             this.Lbl_NomePai.TabIndex = 4;
-            this.Lbl_NomePai.Text = "label1";
+            this.Lbl_NomePai.Text = "Lbl_NomePai";
             // 
             // Txt_NomeMae
             // 
@@ -152,7 +152,7 @@ namespace CursoWindowsForms
             this.Lbl_NomeMae.Name = "Lbl_NomeMae";
             this.Lbl_NomeMae.Size = new System.Drawing.Size(35, 13);
             this.Lbl_NomeMae.TabIndex = 6;
-            this.Lbl_NomeMae.Text = "label1";
+            this.Lbl_NomeMae.Text = "Lbl_NomeMae";
             // 
             // Txt_CEP
             // 
@@ -160,6 +160,7 @@ namespace CursoWindowsForms
             this.Txt_CEP.Name = "Txt_CEP";
             this.Txt_CEP.Size = new System.Drawing.Size(145, 20);
             this.Txt_CEP.TabIndex = 7;
+            this.Txt_CEP.Leave += new System.EventHandler(this.Txt_CEP_Leave);
             // 
             // Lbl_CEP
             // 
@@ -168,7 +169,7 @@ namespace CursoWindowsForms
             this.Lbl_CEP.Name = "Lbl_CEP";
             this.Lbl_CEP.Size = new System.Drawing.Size(35, 13);
             this.Lbl_CEP.TabIndex = 10;
-            this.Lbl_CEP.Text = "label1";
+            this.Lbl_CEP.Text = "Lbl_CEP";
             // 
             // Txt_Logradouro
             // 
@@ -186,7 +187,7 @@ namespace CursoWindowsForms
             this.Lbl_Logradouro.Name = "Lbl_Logradouro";
             this.Lbl_Logradouro.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Logradouro.TabIndex = 12;
-            this.Lbl_Logradouro.Text = "label1";
+            this.Lbl_Logradouro.Text = "Lbl_Logradouro";
             // 
             // Txt_Complemento
             // 
@@ -202,7 +203,7 @@ namespace CursoWindowsForms
             this.Lbl_Complemento.Name = "Lbl_Complemento";
             this.Lbl_Complemento.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Complemento.TabIndex = 14;
-            this.Lbl_Complemento.Text = "label1";
+            this.Lbl_Complemento.Text = "Lbl_Complemento";
             // 
             // Txt_Bairro
             // 
@@ -218,7 +219,7 @@ namespace CursoWindowsForms
             this.Lbl_Bairro.Name = "Lbl_Bairro";
             this.Lbl_Bairro.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Bairro.TabIndex = 16;
-            this.Lbl_Bairro.Text = "label1";
+            this.Lbl_Bairro.Text = "Lbl_Bairro";
             // 
             // Lbl_Estado
             // 
@@ -227,7 +228,7 @@ namespace CursoWindowsForms
             this.Lbl_Estado.Name = "Lbl_Estado";
             this.Lbl_Estado.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Estado.TabIndex = 18;
-            this.Lbl_Estado.Text = "label1";
+            this.Lbl_Estado.Text = "Lbl_Estado";
             // 
             // Txt_Telefone
             // 
@@ -243,7 +244,7 @@ namespace CursoWindowsForms
             this.Lbl_Telefone.Name = "Lbl_Telefone";
             this.Lbl_Telefone.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Telefone.TabIndex = 20;
-            this.Lbl_Telefone.Text = "label1";
+            this.Lbl_Telefone.Text = "Lbl_Telefone";
             // 
             // Txt_Profissao
             // 
@@ -261,7 +262,7 @@ namespace CursoWindowsForms
             this.Lbl_Profissao.Name = "Lbl_Profissao";
             this.Lbl_Profissao.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Profissao.TabIndex = 22;
-            this.Lbl_Profissao.Text = "label1";
+            this.Lbl_Profissao.Text = "Lbl_Profissao";
             // 
             // Txt_RendaFamiliar
             // 
@@ -277,7 +278,7 @@ namespace CursoWindowsForms
             this.Lbl_RendaFamiliar.Name = "Lbl_RendaFamiliar";
             this.Lbl_RendaFamiliar.Size = new System.Drawing.Size(35, 13);
             this.Lbl_RendaFamiliar.TabIndex = 24;
-            this.Lbl_RendaFamiliar.Text = "label1";
+            this.Lbl_RendaFamiliar.Text = "Lbl_RendaFamiliar";
             // 
             // Txt_Codigo
             // 
@@ -294,7 +295,7 @@ namespace CursoWindowsForms
             this.Grp_Codigo.Size = new System.Drawing.Size(287, 55);
             this.Grp_Codigo.TabIndex = 28;
             this.Grp_Codigo.TabStop = false;
-            this.Grp_Codigo.Text = "groupBox1";
+            this.Grp_Codigo.Text = "Grp_Codigo";
             // 
             // Grp_DadosPessoais
             // 
@@ -313,7 +314,7 @@ namespace CursoWindowsForms
             this.Grp_DadosPessoais.Size = new System.Drawing.Size(978, 223);
             this.Grp_DadosPessoais.TabIndex = 29;
             this.Grp_DadosPessoais.TabStop = false;
-            this.Grp_DadosPessoais.Text = "groupBox1";
+            this.Grp_DadosPessoais.Text = "Grp_DadosPessoais";
             // 
             // Grp_Genero
             // 
@@ -325,7 +326,7 @@ namespace CursoWindowsForms
             this.Grp_Genero.Size = new System.Drawing.Size(370, 87);
             this.Grp_Genero.TabIndex = 10;
             this.Grp_Genero.TabStop = false;
-            this.Grp_Genero.Text = "groupBox1";
+            this.Grp_Genero.Text = "Grp_Genero";
             // 
             // Rdb_Indefinido
             // 
@@ -335,7 +336,7 @@ namespace CursoWindowsForms
             this.Rdb_Indefinido.Size = new System.Drawing.Size(85, 17);
             this.Rdb_Indefinido.TabIndex = 2;
             this.Rdb_Indefinido.TabStop = true;
-            this.Rdb_Indefinido.Text = "radioButton3";
+            this.Rdb_Indefinido.Text = "Rdb_Indefinido";
             this.Rdb_Indefinido.UseVisualStyleBackColor = true;
             // 
             // Rdb_Feminino
@@ -346,7 +347,7 @@ namespace CursoWindowsForms
             this.Rdb_Feminino.Size = new System.Drawing.Size(85, 17);
             this.Rdb_Feminino.TabIndex = 1;
             this.Rdb_Feminino.TabStop = true;
-            this.Rdb_Feminino.Text = "radioButton2";
+            this.Rdb_Feminino.Text = "Rdb_Feminino";
             this.Rdb_Feminino.UseVisualStyleBackColor = true;
             // 
             // Rdb_Masculino
@@ -357,7 +358,7 @@ namespace CursoWindowsForms
             this.Rdb_Masculino.Size = new System.Drawing.Size(85, 17);
             this.Rdb_Masculino.TabIndex = 0;
             this.Rdb_Masculino.TabStop = true;
-            this.Rdb_Masculino.Text = "radioButton1";
+            this.Rdb_Masculino.Text = "Rdb_Masculino";
             this.Rdb_Masculino.UseVisualStyleBackColor = true;
             // 
             // Grp_TemPai
@@ -368,7 +369,7 @@ namespace CursoWindowsForms
             this.Grp_TemPai.Size = new System.Drawing.Size(374, 45);
             this.Grp_TemPai.TabIndex = 9;
             this.Grp_TemPai.TabStop = false;
-            this.Grp_TemPai.Text = "groupBox1";
+            this.Grp_TemPai.Text = "Grp_TemPai";
             // 
             // Chk_TemPai
             // 
@@ -377,7 +378,7 @@ namespace CursoWindowsForms
             this.Chk_TemPai.Name = "Chk_TemPai";
             this.Chk_TemPai.Size = new System.Drawing.Size(80, 17);
             this.Chk_TemPai.TabIndex = 0;
-            this.Chk_TemPai.Text = "checkBox1";
+            this.Chk_TemPai.Text = "Chk_TemPai";
             this.Chk_TemPai.UseVisualStyleBackColor = true;
             this.Chk_TemPai.CheckedChanged += new System.EventHandler(this.Chk_TemPai_CheckedChanged);
             // 
@@ -400,7 +401,7 @@ namespace CursoWindowsForms
             this.Grp_Endereco.Size = new System.Drawing.Size(975, 150);
             this.Grp_Endereco.TabIndex = 30;
             this.Grp_Endereco.TabStop = false;
-            this.Grp_Endereco.Text = "groupBox1";
+            this.Grp_Endereco.Text = "Grp_Endereco";
             // 
             // Cmb_Estados
             // 
@@ -417,7 +418,7 @@ namespace CursoWindowsForms
             this.Lbl_Cidade.Name = "Lbl_Cidade";
             this.Lbl_Cidade.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Cidade.TabIndex = 20;
-            this.Lbl_Cidade.Text = "label1";
+            this.Lbl_Cidade.Text = "Lbl_Cidade";
             // 
             // Txt_Cidade
             // 
@@ -439,7 +440,7 @@ namespace CursoWindowsForms
             this.Grp_Outros.Size = new System.Drawing.Size(975, 113);
             this.Grp_Outros.TabIndex = 31;
             this.Grp_Outros.TabStop = false;
-            this.Grp_Outros.Text = "groupBox1";
+            this.Grp_Outros.Text = "Grp_Outros";
             // 
             // Tls_Principal
             // 
@@ -453,7 +454,7 @@ namespace CursoWindowsForms
             this.Tls_Principal.Name = "Tls_Principal";
             this.Tls_Principal.Size = new System.Drawing.Size(1004, 25);
             this.Tls_Principal.TabIndex = 32;
-            this.Tls_Principal.Text = "toolStrip1";
+            this.Tls_Principal.Text = "Tls_Principal";
             // 
             // NovoToolStripButton
             // 
