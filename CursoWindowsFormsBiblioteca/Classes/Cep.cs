@@ -26,5 +26,10 @@ namespace CursoWindowsFormsBiblioteca.Classes
         {
             return System.Text.Json.JsonSerializer.Deserialize<Unit>(vJson);
         }
+
+        public static string SerializedClassUnit(Unit unit)
+        {
+            return System.Text.Json.JsonSerializer.Serialize(unit);
+        }
     }
 }

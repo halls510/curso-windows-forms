@@ -101,5 +101,15 @@ namespace CursoWindowsFormsBiblioteca.Classes
         {
             public List<Unit> ListUnit { get; set; }
         }
+
+        public static Unit DesSerializedClassUnit(string vJson)
+        {
+            return System.Text.Json.JsonSerializer.Deserialize<Unit>(vJson);
+        }
+
+        public static string SerializedClassUnit(Unit unit)
+        {
+            return System.Text.Json.JsonSerializer.Serialize(unit);
+        }
     }
 }
