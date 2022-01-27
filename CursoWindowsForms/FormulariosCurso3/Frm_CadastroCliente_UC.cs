@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using CursoWindowsFormsBiblioteca.Classes;
+using CursoWindowsFormsBiblioteca.Databases;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.VisualBasic;
 using CursoWindowsFormsBiblioteca;
@@ -114,14 +115,30 @@ namespace CursoWindowsForms
         private void NovoToolStripButton_Click(object sender, EventArgs e)
         {
             try
-            {        
+            {
                 Cliente.Unit C = new Cliente.Unit();
                 C = LeituraFormulario();
                 C.ValidaClasse();
                 C.ValidaComplemento();
                 string clienteJson = Cliente.SerializedClassUnit(C);
 
-                MessageBox.Show("Cliente vai ser incluído. O conteúdo será: " + clienteJson, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Fichario F = new Fichario(@"D:\source\repos\CURSO_ALURA\WindowsForms\CursoWindowsForms\Fichario");
+                if (F.status)
+                {
+                    F.Incluir(C.Id, clienteJson);
+                    if (F.status)
+                    {
+                        MessageBox.Show("OK: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (ValidationException Ex)
             {
@@ -135,22 +152,174 @@ namespace CursoWindowsForms
 
         private void AbrirToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique sobre o botão ABRIR");
+            if (Txt_Codigo.Text == "")
+            {
+                MessageBox.Show("Código do Cliente vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Fichario F = new Fichario(@"D:\source\repos\CURSO_ALURA\WindowsForms\CursoWindowsForms\Fichario");
+                if (F.status)
+                {
+                    string clienteJson = F.Buscar(Txt_Codigo.Text);
+                    if (F.status)
+                    {
+                        Cliente.Unit C = new Cliente.Unit();
+                        C = Cliente.DesSerializedClassUnit(clienteJson);
+                        EscreveFormulario(C);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void SalvarToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique sobre o botão SALVAR");
+            if (Txt_Codigo.Text == "")
+            {
+                MessageBox.Show("Código do Cliente vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    Cliente.Unit C = new Cliente.Unit();
+                    C = LeituraFormulario();
+                    C.ValidaClasse();
+                    C.ValidaComplemento();
+                    string clienteJson = Cliente.SerializedClassUnit(C);
+
+                    Fichario F = new Fichario(@"D:\source\repos\CURSO_ALURA\WindowsForms\CursoWindowsForms\Fichario");
+                    if (F.status)
+                    {
+                        F.Alterar(C.Id, clienteJson);
+                        if (F.status)
+                        {
+                            MessageBox.Show("OK: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (ValidationException Ex)
+                {
+                    MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void ApagaToolStripButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Efetuei um clique sobre o botão APAGAR");
+            if (Txt_Codigo.Text == "")
+            {
+                MessageBox.Show("Código do Cliente vazio.", "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Fichario F = new Fichario(@"D:\source\repos\CURSO_ALURA\WindowsForms\CursoWindowsForms\Fichario");
+                if (F.status)
+                {
+                    string clienteJson = F.Buscar(Txt_Codigo.Text);
+
+                    if (F.status)
+                    {
+                        Cliente.Unit C = new Cliente.Unit();
+                        C = Cliente.DesSerializedClassUnit(clienteJson);
+                        EscreveFormulario(C);
+
+                        Frm_Questao Q = new Frm_Questao("icons8_question_64", "Você quer excluir o cliente?");
+                        Q.ShowDialog();
+
+                        if (Q.DialogResult == DialogResult.Yes)
+                        {
+                            F.Apagar(Txt_Codigo.Text);
+                            if (F.status)
+                            {
+                                MessageBox.Show("OK: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                LimparFormulario();
+                            }
+                            else
+                            {
+                                MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ERR: " + F.mensagem, "ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void LimparToolStripButton_Click(object sender, EventArgs e)
         {
             LimparFormulario();
+        }
+
+        void EscreveFormulario(Cliente.Unit C)
+        {
+            Txt_Codigo.Text = C.Id;
+            Txt_NomeCliente.Text = C.Nome;
+            Txt_NomeMae.Text = C.NomeMae;
+            if (C.NaoTemPai == true) { Chk_TemPai.Checked = true; Txt_NomePai.Text = ""; } else { Chk_TemPai.Checked = false; Txt_NomePai.Text = C.NomePai; }
+            switch (C.Genero)
+            {
+                case 0:
+                    Rdb_Indefinido.Checked = true;
+                    break;
+                case 1:
+                    Rdb_Feminino.Checked = true;
+                    break;
+                case 2:
+                    Rdb_Masculino.Checked = true;
+                    break;
+            }
+            Txt_CPF.Text = C.Cpf;
+            Txt_CEP.Text = C.Cep;
+            Txt_Logradouro.Text = C.Logradouro;
+            Txt_Complemento.Text = C.Complemento;
+            Txt_Bairro.Text = C.Bairro;
+            if (C.Estado == "")
+            {
+                Cmb_Estados.SelectedIndex = -1;
+            }
+            else
+            {
+                for (int i = 0; i < Cmb_Estados.Items.Count - 1; i++)
+                {
+                    if (C.Estado == Cmb_Estados.Items[i].ToString())
+                    {
+                        Cmb_Estados.SelectedIndex = i;
+                        break;
+                    }
+                }
+            }
+            Txt_Cidade.Text = C.Cidade;
+            Txt_Telefone.Text = C.Telefone;
+            Txt_Profissao.Text = C.Profissao;
+            Txt_RendaFamiliar.Text = C.RendaFamiliar.ToString();
         }
 
         Cliente.Unit LeituraFormulario()
@@ -168,7 +337,7 @@ namespace CursoWindowsForms
             C.Cep = Txt_CEP.Text;
             C.Logradouro = Txt_Logradouro.Text;
             C.Complemento = Txt_Complemento.Text;
-            C.Bairro = Txt_Bairro.Text;            
+            C.Bairro = Txt_Bairro.Text;
             if (Cmb_Estados.SelectedIndex < 0) C.Estado = ""; else C.Estado = Cmb_Estados.Items[Cmb_Estados.SelectedIndex].ToString();
             C.Cidade = Txt_Cidade.Text;
             C.Telefone = Txt_Telefone.Text;
@@ -176,16 +345,16 @@ namespace CursoWindowsForms
             if (Information.IsNumeric(Txt_RendaFamiliar.Text))
             {
                 Double vRenda = Convert.ToDouble(Txt_RendaFamiliar.Text);
-                if (vRenda < 0) C.RendaFamiliar = 0; else C.RendaFamiliar = vRenda;               
+                if (vRenda < 0) C.RendaFamiliar = 0; else C.RendaFamiliar = vRenda;
             }
-           
+
             return C;
         }
 
         private void Txt_CEP_Leave(object sender, EventArgs e)
         {
             var vCep = Txt_CEP.Text;
-            if(vCep != "")
+            if (vCep != "")
             {
                 if (vCep.Length == 8)
                 {
@@ -201,7 +370,7 @@ namespace CursoWindowsForms
                         Cmb_Estados.SelectedIndex = -1;
                         for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
                         {
-                            var vPos = Strings.InStr(Cmb_Estados.Items[i].ToString(),"(" + CEP.uf + ")");
+                            var vPos = Strings.InStr(Cmb_Estados.Items[i].ToString(), "(" + CEP.uf + ")");
                             if (vPos > 0)
                             {
                                 Cmb_Estados.SelectedIndex = i;
@@ -210,7 +379,7 @@ namespace CursoWindowsForms
                         }
                     }
                 }
-            }           
+            }
         }
     }
 }
