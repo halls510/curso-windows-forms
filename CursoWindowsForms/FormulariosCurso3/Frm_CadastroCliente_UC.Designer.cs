@@ -55,6 +55,7 @@ namespace CursoWindowsForms
             this.Lbl_RendaFamiliar = new System.Windows.Forms.Label();
             this.Txt_Codigo = new System.Windows.Forms.TextBox();
             this.Grp_Codigo = new System.Windows.Forms.GroupBox();
+            this.Btn_Busca = new System.Windows.Forms.Button();
             this.Grp_DadosPessoais = new System.Windows.Forms.GroupBox();
             this.Grp_Genero = new System.Windows.Forms.GroupBox();
             this.Rdb_Indefinido = new System.Windows.Forms.RadioButton();
@@ -87,7 +88,7 @@ namespace CursoWindowsForms
             this.Lbl_CPF.AutoSize = true;
             this.Lbl_CPF.Location = new System.Drawing.Point(596, 74);
             this.Lbl_CPF.Name = "Lbl_CPF";
-            this.Lbl_CPF.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_CPF.Size = new System.Drawing.Size(47, 13);
             this.Lbl_CPF.TabIndex = 0;
             this.Lbl_CPF.Text = "Lbl_CPF";
             // 
@@ -114,7 +115,7 @@ namespace CursoWindowsForms
             this.Lbl_NomeCliente.AutoSize = true;
             this.Lbl_NomeCliente.Location = new System.Drawing.Point(6, 26);
             this.Lbl_NomeCliente.Name = "Lbl_NomeCliente";
-            this.Lbl_NomeCliente.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_NomeCliente.Size = new System.Drawing.Size(87, 13);
             this.Lbl_NomeCliente.TabIndex = 2;
             this.Lbl_NomeCliente.Text = "Lbl_NomeCliente";
             // 
@@ -132,7 +133,7 @@ namespace CursoWindowsForms
             this.Lbl_NomePai.AutoSize = true;
             this.Lbl_NomePai.Location = new System.Drawing.Point(6, 120);
             this.Lbl_NomePai.Name = "Lbl_NomePai";
-            this.Lbl_NomePai.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_NomePai.Size = new System.Drawing.Size(70, 13);
             this.Lbl_NomePai.TabIndex = 4;
             this.Lbl_NomePai.Text = "Lbl_NomePai";
             // 
@@ -150,7 +151,7 @@ namespace CursoWindowsForms
             this.Lbl_NomeMae.AutoSize = true;
             this.Lbl_NomeMae.Location = new System.Drawing.Point(6, 74);
             this.Lbl_NomeMae.Name = "Lbl_NomeMae";
-            this.Lbl_NomeMae.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_NomeMae.Size = new System.Drawing.Size(76, 13);
             this.Lbl_NomeMae.TabIndex = 6;
             this.Lbl_NomeMae.Text = "Lbl_NomeMae";
             // 
@@ -167,7 +168,7 @@ namespace CursoWindowsForms
             this.Lbl_CEP.AutoSize = true;
             this.Lbl_CEP.Location = new System.Drawing.Point(6, 16);
             this.Lbl_CEP.Name = "Lbl_CEP";
-            this.Lbl_CEP.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_CEP.Size = new System.Drawing.Size(48, 13);
             this.Lbl_CEP.TabIndex = 10;
             this.Lbl_CEP.Text = "Lbl_CEP";
             // 
@@ -185,7 +186,7 @@ namespace CursoWindowsForms
             this.Lbl_Logradouro.AutoSize = true;
             this.Lbl_Logradouro.Location = new System.Drawing.Point(159, 16);
             this.Lbl_Logradouro.Name = "Lbl_Logradouro";
-            this.Lbl_Logradouro.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_Logradouro.Size = new System.Drawing.Size(81, 13);
             this.Lbl_Logradouro.TabIndex = 12;
             this.Lbl_Logradouro.Text = "Lbl_Logradouro";
             // 
@@ -201,7 +202,7 @@ namespace CursoWindowsForms
             this.Lbl_Complemento.AutoSize = true;
             this.Lbl_Complemento.Location = new System.Drawing.Point(6, 55);
             this.Lbl_Complemento.Name = "Lbl_Complemento";
-            this.Lbl_Complemento.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_Complemento.Size = new System.Drawing.Size(91, 13);
             this.Lbl_Complemento.TabIndex = 14;
             this.Lbl_Complemento.Text = "Lbl_Complemento";
             // 
@@ -217,7 +218,7 @@ namespace CursoWindowsForms
             this.Lbl_Bairro.AutoSize = true;
             this.Lbl_Bairro.Location = new System.Drawing.Point(495, 55);
             this.Lbl_Bairro.Name = "Lbl_Bairro";
-            this.Lbl_Bairro.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_Bairro.Size = new System.Drawing.Size(54, 13);
             this.Lbl_Bairro.TabIndex = 16;
             this.Lbl_Bairro.Text = "Lbl_Bairro";
             // 
@@ -226,7 +227,7 @@ namespace CursoWindowsForms
             this.Lbl_Estado.AutoSize = true;
             this.Lbl_Estado.Location = new System.Drawing.Point(494, 102);
             this.Lbl_Estado.Name = "Lbl_Estado";
-            this.Lbl_Estado.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_Estado.Size = new System.Drawing.Size(60, 13);
             this.Lbl_Estado.TabIndex = 18;
             this.Lbl_Estado.Text = "Lbl_Estado";
             // 
@@ -242,7 +243,7 @@ namespace CursoWindowsForms
             this.Lbl_Telefone.AutoSize = true;
             this.Lbl_Telefone.Location = new System.Drawing.Point(6, 25);
             this.Lbl_Telefone.Name = "Lbl_Telefone";
-            this.Lbl_Telefone.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_Telefone.Size = new System.Drawing.Size(69, 13);
             this.Lbl_Telefone.TabIndex = 20;
             this.Lbl_Telefone.Text = "Lbl_Telefone";
             // 
@@ -260,7 +261,7 @@ namespace CursoWindowsForms
             this.Lbl_Profissao.AutoSize = true;
             this.Lbl_Profissao.Location = new System.Drawing.Point(339, 25);
             this.Lbl_Profissao.Name = "Lbl_Profissao";
-            this.Lbl_Profissao.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_Profissao.Size = new System.Drawing.Size(70, 13);
             this.Lbl_Profissao.TabIndex = 22;
             this.Lbl_Profissao.Text = "Lbl_Profissao";
             // 
@@ -276,7 +277,7 @@ namespace CursoWindowsForms
             this.Lbl_RendaFamiliar.AutoSize = true;
             this.Lbl_RendaFamiliar.Location = new System.Drawing.Point(6, 65);
             this.Lbl_RendaFamiliar.Name = "Lbl_RendaFamiliar";
-            this.Lbl_RendaFamiliar.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_RendaFamiliar.Size = new System.Drawing.Size(94, 13);
             this.Lbl_RendaFamiliar.TabIndex = 24;
             this.Lbl_RendaFamiliar.Text = "Lbl_RendaFamiliar";
             // 
@@ -289,13 +290,24 @@ namespace CursoWindowsForms
             // 
             // Grp_Codigo
             // 
+            this.Grp_Codigo.Controls.Add(this.Btn_Busca);
             this.Grp_Codigo.Controls.Add(this.Txt_Codigo);
             this.Grp_Codigo.Location = new System.Drawing.Point(12, 106);
             this.Grp_Codigo.Name = "Grp_Codigo";
-            this.Grp_Codigo.Size = new System.Drawing.Size(287, 55);
+            this.Grp_Codigo.Size = new System.Drawing.Size(409, 55);
             this.Grp_Codigo.TabIndex = 28;
             this.Grp_Codigo.TabStop = false;
             this.Grp_Codigo.Text = "Grp_Codigo";
+            // 
+            // Btn_Busca
+            // 
+            this.Btn_Busca.Location = new System.Drawing.Point(280, 16);
+            this.Btn_Busca.Name = "Btn_Busca";
+            this.Btn_Busca.Size = new System.Drawing.Size(115, 24);
+            this.Btn_Busca.TabIndex = 2;
+            this.Btn_Busca.Text = "button1";
+            this.Btn_Busca.UseVisualStyleBackColor = true;
+            this.Btn_Busca.Click += new System.EventHandler(this.Btn_Busca_Click);
             // 
             // Grp_DadosPessoais
             // 
@@ -333,7 +345,7 @@ namespace CursoWindowsForms
             this.Rdb_Indefinido.AutoSize = true;
             this.Rdb_Indefinido.Location = new System.Drawing.Point(17, 64);
             this.Rdb_Indefinido.Name = "Rdb_Indefinido";
-            this.Rdb_Indefinido.Size = new System.Drawing.Size(85, 17);
+            this.Rdb_Indefinido.Size = new System.Drawing.Size(97, 17);
             this.Rdb_Indefinido.TabIndex = 2;
             this.Rdb_Indefinido.TabStop = true;
             this.Rdb_Indefinido.Text = "Rdb_Indefinido";
@@ -344,7 +356,7 @@ namespace CursoWindowsForms
             this.Rdb_Feminino.AutoSize = true;
             this.Rdb_Feminino.Location = new System.Drawing.Point(17, 41);
             this.Rdb_Feminino.Name = "Rdb_Feminino";
-            this.Rdb_Feminino.Size = new System.Drawing.Size(85, 17);
+            this.Rdb_Feminino.Size = new System.Drawing.Size(93, 17);
             this.Rdb_Feminino.TabIndex = 1;
             this.Rdb_Feminino.TabStop = true;
             this.Rdb_Feminino.Text = "Rdb_Feminino";
@@ -355,7 +367,7 @@ namespace CursoWindowsForms
             this.Rdb_Masculino.AutoSize = true;
             this.Rdb_Masculino.Location = new System.Drawing.Point(17, 18);
             this.Rdb_Masculino.Name = "Rdb_Masculino";
-            this.Rdb_Masculino.Size = new System.Drawing.Size(85, 17);
+            this.Rdb_Masculino.Size = new System.Drawing.Size(99, 17);
             this.Rdb_Masculino.TabIndex = 0;
             this.Rdb_Masculino.TabStop = true;
             this.Rdb_Masculino.Text = "Rdb_Masculino";
@@ -376,7 +388,7 @@ namespace CursoWindowsForms
             this.Chk_TemPai.AutoSize = true;
             this.Chk_TemPai.Location = new System.Drawing.Point(19, 19);
             this.Chk_TemPai.Name = "Chk_TemPai";
-            this.Chk_TemPai.Size = new System.Drawing.Size(80, 17);
+            this.Chk_TemPai.Size = new System.Drawing.Size(87, 17);
             this.Chk_TemPai.TabIndex = 0;
             this.Chk_TemPai.Text = "Chk_TemPai";
             this.Chk_TemPai.UseVisualStyleBackColor = true;
@@ -416,7 +428,7 @@ namespace CursoWindowsForms
             this.Lbl_Cidade.AutoSize = true;
             this.Lbl_Cidade.Location = new System.Drawing.Point(6, 102);
             this.Lbl_Cidade.Name = "Lbl_Cidade";
-            this.Lbl_Cidade.Size = new System.Drawing.Size(35, 13);
+            this.Lbl_Cidade.Size = new System.Drawing.Size(60, 13);
             this.Lbl_Cidade.TabIndex = 20;
             this.Lbl_Cidade.Text = "Lbl_Cidade";
             // 
@@ -581,5 +593,6 @@ namespace CursoWindowsForms
         private System.Windows.Forms.ToolStripButton SalvarToolStripButton;
         private System.Windows.Forms.ToolStripButton ApagaToolStripButton;
         private System.Windows.Forms.ToolStripButton LimparToolStripButton;
+        private System.Windows.Forms.Button Btn_Busca;
     }
 }
