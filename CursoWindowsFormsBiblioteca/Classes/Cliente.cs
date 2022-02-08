@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using CursoWindowsFormsBiblioteca.Databases;
 
 namespace CursoWindowsFormsBiblioteca.Classes
 {
@@ -13,7 +12,7 @@ namespace CursoWindowsFormsBiblioteca.Classes
         {
             [Required(ErrorMessage = "Código do Cliente é obrigatório.")]
             [RegularExpression("([0-9]+)", ErrorMessage = "Código do Cliente somente aceita valores numéricos.")]
-            [StringLength(6,MinimumLength = 6, ErrorMessage = "Código do Cliente deve ter 6 dígitos.")]
+            [StringLength(6, MinimumLength = 6, ErrorMessage = "Código do Cliente deve ter 6 dígitos.")]
             public string Id { get; set; }
 
             [Required(ErrorMessage = "Nome do Cliente é obrigatório.")]
@@ -69,8 +68,8 @@ namespace CursoWindowsFormsBiblioteca.Classes
             public string Profissao { get; set; }
 
             [Required(ErrorMessage = "Renda Familiar é obrigatória.")]
-            [Range(0,double.MaxValue,ErrorMessage ="Renda familiar deve ser um valor positivo.")]
-            public Double RendaFamiliar { get; set; }
+            [Range(0, double.MaxValue, ErrorMessage = "Renda familiar deve ser um valor positivo.")]
+            public Double RendaFamiliar { get; set; }        
 
             public void ValidaClasse()
             {
@@ -96,6 +95,89 @@ namespace CursoWindowsFormsBiblioteca.Classes
                 bool validaCPF = Cls_Uteis.Valida(this.Cpf);
                 if (validaCPF == false) throw new Exception("CPF inválido."); ;
             }
+
+            #region "CRUD do Fichário"
+            public void IncluirFichario(string Conexao)
+            {
+                string clienteJson = Cliente.SerializedClassUnit(this);
+                Fichario F = new Fichario(Conexao);
+                if (F.status)
+                {
+                    F.Incluir(this.Id, clienteJson);
+                    if (!F.status)
+                    {
+                        throw new Exception(F.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            public Unit BuscarFichario(string id, string conexao)
+            {
+                Fichario F = new Fichario(conexao);
+                if (F.status)
+                {
+                    string clienteJson = F.Buscar(id);                    
+                    return Cliente.DesSerializedClassUnit(clienteJson);
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            public void AlterarFichario(string conexao)
+            {
+                string clienteJson = Cliente.SerializedClassUnit(this);
+                Fichario F = new Fichario(conexao);
+                if (F.status)
+                {
+                    F.Alterar(this.Id, clienteJson);
+                    if (!F.status)
+                    {
+                        throw new Exception(F.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            public void ApagarFichario(string conexao)
+            {
+                Fichario F = new Fichario(conexao);
+                if (F.status)
+                {
+                    F.Apagar(this.Id);
+                    if (!F.status)
+                    {
+                        throw new Exception(F.mensagem);
+                    }
+                }
+                else
+                {
+                    throw new Exception(F.mensagem);
+                }
+            }
+
+            public List<string> ListaFichario(string conexao)
+            {
+                Fichario F = new Fichario(conexao);
+                if (F.status)
+                {
+                    List<string> todosJson = F.BuscarTodos();
+                    return todosJson;
+                }
+                else
+                {
+                   throw new Exception(F.mensagem);
+                }
+            }
+            #endregion
         }
         public class List
         {
